@@ -1,0 +1,46 @@
+openapi: 3.1.0
+info:
+  title: ping
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /ping:
+    parameters: []
+    get:
+      summary: ''
+      operationId: get-ping
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+              examples:
+                ok:
+                  value:
+                    status: ok
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+            examples: {}
+components:
+  schemas: {}
+  requestBodies: {}
+  parameters:
+    user:
+      name: user
+      in: query
+      required: false
+      schema:
+        type: string
+      description: name
